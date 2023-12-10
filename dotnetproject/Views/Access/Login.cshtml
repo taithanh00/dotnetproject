@@ -1,0 +1,76 @@
+﻿@model dotnetproject.Models.VMLogin;
+@{
+  Layout = null;
+}
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true">
+@* <form asp-controller="Access" asp-action="Login" method="POST">
+<h1 class="">Login</h1>
+<input type="email" placeholder="Email" asp-for="Email" />
+<input type="password" placeholder="Password" asp-for="PassWord" />
+<label>
+<input type="checkbox" asp-for="KeepLoggedIn" />
+Keep me logged In
+</label>
+<button type="submit">Login</button>
+@if (ViewData["ValidateMessage"] != null)
+{
+<br />
+<br />
+<label>@ViewData["ValidateMessage"]</label>
+}
+</form> *@
+
+<form class="form" asp-controller="Access" asp-action="Login" method="POST">
+  <p class="form-title">Sign in to your account</p>
+  <div class="input-container">
+    <input placeholder="Enter email" type="email" asp-for="Email">
+    <span>
+      <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+          stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="input-container">
+    <input type="password" placeholder="Enter Password" asp-for="PassWord" />
+    <span>
+      <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        </path>
+        <path
+          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+          stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="checkbox">
+    <input id="form-checkbox-1" name="checkbox" type="checkbox">
+    <label for="form-checkbox-1">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200">
+        <mask fill="white" id="checkbox-mask">
+          <rect height="200" width="200"></rect>
+        </mask>
+        <rect mask="url(#checkbox-mask)" stroke-width="40" height="200" width="200"></rect>
+        <path stroke-width="15" d="M52 111.018L76.9867 136L149 64"></path>
+      </svg>
+      <span>Keep me logged in</span>
+    </label>
+  </div>
+
+  <button class="submit" type="submit">
+    Sign in
+  </button>
+
+  <p class="signup-link">
+    No account?
+    <a href="">Sign up</a>
+  </p>
+  @if (ViewData["ValidateMessage"] != null)
+  {
+    <br />
+    <br />
+    <label>@ViewData["ValidateMessage"]</label>
+  }
+</form>
+<script src="~/js/login.js"></script>
